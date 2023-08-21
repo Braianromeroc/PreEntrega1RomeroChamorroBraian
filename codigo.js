@@ -22,7 +22,7 @@ formulario.addEventListener("submit", evento=>{
         entrar = true;
     };
     if(!email.value.includes("@")||!email.value.includes(".")){
-        warnings += `El email no es valido <br>`;
+        warnings += `El email es invalido <br>`;
         entrar = true;
     };
 
@@ -63,14 +63,14 @@ if (carrito.length != 0) {
 function renderizarProductos(casasArray) {
     for (const casa of casasArray) {
         contenedorCasa.innerHTML += `
-            <div class="d-flex card col-sm-4 col-lg-3 gap-2">
-                <div class="card-body text-center w-100">
+            <div class="card--general card col-sm-4 col-lg-3">
+                <div class="card--cuerpo card-body text-center">
                     <h5 class="card-title">${casa.id}</h5>
                     <p class="card-text">${casa.tipo}</p>
                     <p class="card-text">$ ${casa.precio}</p>
                     <p class="card-text"> ${casa.zona}</p>
                     <p class="card-text"> ${casa.agregado}</p>
-                    <button id='btn${casa.id}' class="btn btn-success align-bottom">Comprar</button>
+                    <button id='btn${casa.id}' class="boton--cards btn btn-success align-bottom">Comprar</button>
                 </div>
             </div>
         `;
@@ -141,8 +141,8 @@ const fetchCasa = async () => {
         const renderInfo = () => {
             data.map ((item) => {
                 document.getElementById("listaInfo").innerHTML += `
-                    <div class="d-flex card col-sm-12 gap-2">
-                        <div class="card-body text-center">
+                    <div class="card--general__info card col-sm-12 gap-2">
+                        <div class="card--cuerpo__info card-body text-center">
                             <h5 class="card-title">${item.zona}</h5>
                             <p class="card-text">${item.info}</p>
                         </div>
