@@ -53,5 +53,6 @@ const casaOeste2 = new casaOeste (12, "Casa de dos pisos", "C/pileta", 130000, "
 const casaOeste3 = new casaOeste (13, "Casa estandar", "C/pileta", 85000, "Zona Oeste");
 const casaOeste4 = new casaOeste (14, "Casa de dos pisos", "S/pileta", 138000, "Zona Oeste");
 const casaOeste5 = new casaOeste (15, "Casa de tres pisos", "C/pileta", 145000, "Zona Oeste");
+const casaOeste6 = new casaOeste (16, "Casa de cuatro pisos", "C/pileta", 190000, "Zona Oeste");
 
-casasArray.push(casaOeste1, casaOeste2, casaOeste3, casaOeste4, casaOeste5);
+casasArray.push(casaOeste1, casaOeste2, casaOeste3, casaOeste4, casaOeste5, casaOeste6);

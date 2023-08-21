@@ -39,11 +39,11 @@
     <main>
 
         <section class="general">
-            <form  id="form">
+            <form id="form">
                 <div class="form">
-                    <h2 class="h1--registro">Registro</h2>
+                    <h2 class="h2--registro">Registro</h2>
                     <div class="grupo">
-                        <input type="text" id="name" ><span class="barra input-group "></span>
+                        <input type="text" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))"  id="nombre" ><span class="barra input-group "></span>
                         <label class="label">Nombre</label>
                     </div>
                     <div class="grupo">
@@ -51,7 +51,7 @@
                         <label class="label">Email</label>
                     </div>
                     <button type="submit" class="boton--form">Suscribirte</button>
-                    <p class="warnings" id="warnings"></p>
+                    <p class="alertas" id="alertas"></p>
                 </div>
             </form>
         </section>

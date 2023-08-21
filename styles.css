@@ -9,8 +9,19 @@
     box-sizing: border-box;
 }
 
-.general {
+main {
     font-family: 'Roboto';
+    background: #4568DC;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #B06AB3, #4568DC);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    justify-content: center;
+    align-items: center;
+}
+
+.general {
     height: 50%;
     width: 100%;
     display: flex;
@@ -18,9 +29,10 @@
     align-items: center;
 }
 
-.h1--registro{
+.h2--registro{
     text-align: center;
     font-weight: 700;
+    padding-top: 15px;
 }
 
 
@@ -89,7 +101,7 @@ input:focus~.barra::before{
     width: 100%;
 }
 
-.warnings{
+.alertas{
     width: 200px;
     text-align: center;
     margin: auto;

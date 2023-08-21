@@ -3,13 +3,13 @@ let cantidad = document.getElementById("cant");
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 cantidad.innerText = `🛒${carrito.length}`;
 
-
-const nombre = document.getElementById("name");
+const nombre = document.getElementById("nombre");
 const email = document.getElementById("email");
 const formulario = document.getElementById("form");
-const parrafo = document.getElementById("warnings");
+const parrafo = document.getElementById("alertas");
 const usuarioName = [];
 
+// formulario de registro
 formulario.addEventListener("submit", evento=>{
     evento.preventDefault();
     let warnings = [];
@@ -32,7 +32,7 @@ formulario.addEventListener("submit", evento=>{
             setTimeout(() => {
                 Swal.fire({
                     icon: 'success',
-                    title: 'Perfecto!! Te registraste',
+                    title: `Perfecto ${usuarioName}!! Te registraste`,
                     })
                     document.getElementById("form").innerHTML = "";
             }, 1000);
@@ -41,10 +41,7 @@ formulario.addEventListener("submit", evento=>{
         }
 })
 
-console.log(usuarioName);
-
-
-
+// agrega casas a la tabla del carrito
 if (carrito.length != 0) {
     for (const casa of carrito) {
         document.getElementById("tablabody").innerHTML += `
@@ -67,7 +64,7 @@ function renderizarProductos(casasArray) {
     for (const casa of casasArray) {
         contenedorCasa.innerHTML += `
             <div class="d-flex card col-sm-4 col-lg-3 gap-2">
-                <div class="card-body text-center">
+                <div class="card-body text-center w-100">
                     <h5 class="card-title">${casa.id}</h5>
                     <p class="card-text">${casa.tipo}</p>
                     <p class="card-text">$ ${casa.precio}</p>
@@ -135,7 +132,6 @@ const fetchCasa = async () => {
             return new Promise( (resolve, reject) => {
                 setTimeout(() => {
                     resolve(data)
-                    console.log(data)
                 }, 3000)
             })
         }
@@ -176,11 +172,30 @@ let finBoton = document.getElementById("finalizar");
 let cancelarBoton = document.getElementById("cancelar")
 
 finBoton.onclick = () => {
+    if(usuarioName==""){
+        Swal.fire({
+            icon: "error",
+            title: "No te suscribiste",
+            text: "Antes de comprar debes suscribirte",
+        })
+    } else if(carrito==""){
+        Toastify({
+            text: "No seleccionaste ninguna casa",
+            duration: 3000,
+            gravity: "top",
+            position: "left",
+            close: true,
+            style: {
+                background: "rgb(197,2,2)",
+                background: "linear-gradient(90deg, rgba(197,2,2,1) 0%, rgba(255,0,0,1) 50%, rgba(197,2,2,1) 100%)",
+            },
+        }).showToast();
+    } else {
     setTimeout(() => {
         Swal.fire({
             icon: "success",
             title: "Compra Exitosa",
-            text: "Gracias por tu compra! Un asesor se comunicara con usted",
+            text: `Gracias ${usuarioName} por tu compra! Un asesor se comunicara con usted`,
         })
 
         carrito = [];
@@ -189,19 +204,32 @@ finBoton.onclick = () => {
         document.getElementById("total").innerText = "Presupuesto total: $";
         localStorage.removeItem("carrito");
     }, 1500)
-
+    }
 }
 
 cancelarBoton.onclick = () => {
+    if(carrito==""){
+        Toastify({
+            text: "No seleccionaste ninguna casa",
+            duration: 3000,
+            gravity: "top",
+            position: "left",
+            close: true,
+            style: {
+                background: "rgb(197,2,2)",
+                background: "linear-gradient(90deg, rgba(197,2,2,1) 0%, rgba(255,0,0,1) 50%, rgba(197,2,2,1) 100%)",
+            },
+        }).showToast();
+    } else {
     Swal.fire({
         icon: 'error',
         title: 'Cancelaste la compra',
         })
-
 
     carrito = [];
     document.getElementById("tablabody").innerHTML = "";
     cantidad.innerText = `🛒${carrito.length}`;
     document.getElementById("total").innerText = "Presupuesto total: $";
     localStorage.removeItem("carrito");
-}
+    }
+    }
