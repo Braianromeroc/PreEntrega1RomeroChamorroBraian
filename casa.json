@@ -1,0 +1,14 @@
+[
+    {
+        "zona": "Zona norte",
+        "info": "La zona norte esta formada por los partidos siguientes: San Isidro, Vicente López, San Martín, San Fernando, Tigre y contiene los barrios de Tigre, El Talar, San Fernando, Don Torcuato, San Isidro, Martínez, Boulogne, Munro, Villa Ballester, Ombú, San Martín, Churruca, El Palomar, Caseros y Santos Lugares."
+    },
+    {
+        "zona": "Zona sur",
+        "info": "La zona sur está formada de los partidos de Almirante Brown, Avellaneda, Quilmes, Lanús, Florencio Várela, Berazategui, Lomas de Zamora, Esteban Echeverría y contiene los barrios de Androgué, Avellaneda, Banfíeld, Bernal, Burzaco, El Roció, Ezeiza, Florencia Várela, Lanús, Lavallol, Lomas de Zamora, Longchamps, Monte Chingolo, Monte Grande, Paraná, Piñeyro, Plátanos, Quilmes, R. Calzada, Ranelagh, San F. Solano, Santa Catalina, Santos Vega, Sarandí, T. Suárez, Villa Caraza, Wilde."
+    },
+    {
+        "zona": "Zona oeste",
+        "info": "La zona oeste esta formada de los partidos de Morón, Tres de Febrero, La Matanza Merlo, Moreno y contiene los barrios de los Polvorines, San Miguel, Bella Vista, Hurlingham, Leloir, Ituzaingó, Morón, Haedo, Ramos Mejía, Ciudadela, San Justo, Tablada, Isidoro Casanova, Laferre, General Belgrano, Tablada, Mercado y Aeropuerto."
+    }
+]
